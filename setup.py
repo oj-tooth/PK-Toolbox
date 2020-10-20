@@ -39,7 +39,7 @@ setup(
     # Version
     version=get_version(),
 
-    description='An example Python project.',
+    description='A Pharmokinetic Modelling and Visulaisation Toolbox!',
 
     long_description=get_readme(),
 
@@ -49,11 +49,11 @@ setup(
 
     # author_email='',
 
-    maintainer='Martin Robinson',
+    maintainer='Ollie Tooth',
 
-    maintainer_email='martin.robinson@cs.ox.ac.uk',
+    maintainer_email='oliver.tooth@env-res.ox.ac.uk',
 
-    url='https://github.com/SABS-R3/2020-software-engineering-projects-pk',
+    url='https://github.com/oj-tooth/PK-Toolbox',
 
     # Packages to include
     packages=find_packages(include=('pkmodel', 'pkmodel.*')),
