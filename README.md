@@ -1,7 +1,7 @@
 <!-- Prpject Title and Logo -->
 <br />
 <p align="center">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/Logo_Image.png" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">PK Toolbox</h3>
