@@ -3,15 +3,15 @@
 #
 
 class Model:
-    """A Pharmokinetic (PK) model
 
-    Parameters
-    ----------
+    def __init__(self, name, compartments=0):
+        '''
 
-    value: numeric, optional
-        an example paramter
+        :param name: name of model
+        :type name: string
+        :param compartments: number of compartments
+        :type compartments: integer
 
-    """
-    def __init__(self, value=42):
-        self.value = value
-
+        '''
+        self.name = name
+        self.compartments = compartments
