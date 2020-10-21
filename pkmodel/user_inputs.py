@@ -7,6 +7,7 @@ Created on Wed Oct 21 14:32:54 2020
 """
 from model import Model
 
+
 def user_inputs():
     model_list = []
     another = True
