@@ -36,7 +36,7 @@
 <!-- About the PK Toolbox -->
 ## About The PK Toolbox
 
-Add a catchy intro to the PK Toolbox here.
+**T**he PK Toolbox is a Python library dedicated to the simulation and visualisation of Pharmokinetic (PK) models. Users are able to model the body as one or more compartments, utilising either *intravenous bolus* or *subcutaneous* dosing protocols. 
 
 Here's why:
 * Bullet Point List.
