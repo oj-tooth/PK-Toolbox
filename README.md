@@ -47,16 +47,31 @@ Users are able to:
 
 ### Background
 
-**P**K models are used to describe how a specific chemical (drug) is absorbed, distributed and excreted in the body. Modelling ensures that a drug achieves the required efficacy while minimising adverse events by sustaining a concentration within a defined therapeutic window. 
+PK models are used to describe how a specific chemical (drug) is absorbed, distributed and excreted in the body. Modelling ensures that a drug achieves the required efficacy while minimising adverse events by sustaining a concentration within a defined therapeutic window. 
 
 Multi-compartmental PK models, in which the body is divided into one or more interacting compartments, are the most commonly used. Below we present the structure of the two PK models available in the PK Toolbox: 
 
 <p align="center">
-<!--    <img src="images/IVB.png" alt="Logo" width="400" height="400"> 
-    <img src="images/SC.png" alt="Logo" width="400" height="400"> --!>
+    <img src="images/IVB.png" alt="Logo" width="350" height="350"> 
+    <img src="images/SC.png" alt="Logo" width="350" height="350"> 
  </a>
 <p
 
+**Parameter List**
+For *intravenous bolus* dosing protocol:
+* Dose(t) - Dose function (ng hr<sup>-1</sup>) 
+* V<sub>c</sub> - Volume of central compartment (mL)
+* q<sub>c</sub> - Concentration of drug in central compartment (ng)
+* V<sub>pn</sub> - Volume of peripheral compartment n (mL)
+* q<sub>n</sub> - Concentration of drug in peripheral compartment n (ng)
+* Q<sub>pn</sub> - Transition between central compartment and peripheral compartment n (mL hr<sup>-1</sup>)
+* CL - Clearance rate from the central compartment (mL hr<sup>-1</sup>) 
+
+Additional paramers for *subcutaneous* dosing protocol:
+* V<sub>q0</sub> - Volume of dosage compartment (mL)
+* q<sub>0</sub> - Concentration of drug in dosage compartment (ng)
+* Q<sub>p0</sub> - Transition between dosage compartment and central compartment (mL hr<sup>-1</sup>)
+* k<sub>a</sub> - Absorption rate to central compartment (hr<sup>-1</sup>)
 
 <!-- Getting Started -->
 ## Getting Started
