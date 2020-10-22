@@ -51,6 +51,11 @@ Users are able to:
 
 Multi-compartmental PK models, in which the body is divided into one or more interacting compartments, are the most commonly used. Below we present the structure of the two PK models available in the PK Toolbox: 
 
+<p align="center">
+<!--    <img src="images/IVB.png" alt="Logo" width="400" height="400"> 
+    <img src="images/SC.png" alt="Logo" width="400" height="400"> --!>
+ </a>
+<p
 
 
 <!-- Getting Started -->
