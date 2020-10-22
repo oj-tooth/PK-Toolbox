@@ -20,27 +20,29 @@ def rhs(t, y, model):
     """Defines right hand side (rhs) of the ode.
 
     :param t: Time variable.
-    
-    :param y: List containing concentration variables. 
-        
-        The length is dependent on the protocol being used.
-        
-        For 'ivb': y[0] is the central compartment q_c and y[1] is the peripheral q_p1. 
-        
-        For 'sc': y[0] is q_0 and y[1] and y[2] contains q_c and q_p1 respectively.
 
-        If a peripheral compartment is not being used it will 
+    :param y: List containing concentration variables.
+
+        The length is dependent on the protocol being used.
+
+        For 'ivb':
+            y[0] is the central compartment q_c and y[1] is the peripheral q_p1
+
+        For 'sc':
+            y[0] is q_0 and y[1] and y[2] contains q_c and q_p1 respectively.
+
+        If a peripheral compartment is not being used it will
         still exist but will remain identically zero for all time.
-    
-    :param Q_p1: Transition rate between the central and 
+
+    :param Q_p1: Transition rate between the central and
         peripheral compartment.
     :param V_c: Volume of the central compartment.
     :param V_p1: Volume of the peripheral compartment.
     :param CL: Clearance rate from the main compartment.
     :param k_a: Absorption rate for 'sc' dosing.
-    :param model: Takes the model class object to retrieve input 
+    :param model: Takes the model class object to retrieve input
         parameters from it.
-    :return: List of derivatives of q_c, q_p1 and optionally q_0 
+    :return: List of derivatives of q_c, q_p1 and optionally q_0
         depending on protocol, corresponds to the length of y.
     """
     #get params out of the model class
