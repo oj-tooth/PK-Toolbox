@@ -58,6 +58,7 @@ Multi-compartmental PK models, in which the body is divided into one or more int
 <p
 
 **Parameter List**
+
 For *intravenous bolus* dosing protocol:
 * Dose(t) - Dose function (ng hr<sup>-1</sup>) 
 * V<sub>c</sub> - Volume of central compartment (mL)
