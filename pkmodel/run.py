@@ -19,7 +19,8 @@ params1 = {
             'V_p1': 1.0,
             'CL': 1.0,
             'k_a': 1.5,
-            'dose': 2.0,
+            'dose_rate': 2.0,
+            't_dose': 3.0,
             't_end': 10.0
         }
 
@@ -29,17 +30,16 @@ params2 = {
             'V_p1': 1.0,
             'CL': 1.0,
             'k_a': 1.5,
-            'dose': 2.0,
+            'dose_rate': 2.0,
+            't_dose': 3.0,
             't_end': 10.0
         }
 
 model_list = [Model('example_name', params1, 1, 'ivb'), Model('example_name2', params2, 2, 'sc')]
-print(model_list)
-print(model_list[0].params)
+
 # FIND SOLUTIONS
 sol_list = []
 for model in model_list:
-    print(type(model))
     sol_list.append(solve_model.solve(model))
 
 # PLOT SOLUTIONS
