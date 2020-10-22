@@ -1,0 +1,328 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to PK-Toolbox’s documentation! &#8212; PK-Toolbox 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-pk-toolbox-s-documentation">
+<h1><strong>Welcome to PK-Toolbox’s documentation!</strong><a class="headerlink" href="#welcome-to-pk-toolbox-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>The PK Toolbox is a Python library dedicated to the simulation and visualisation of Pharmokinetic (PK) models.</p>
+</div>
+<div class="section" id="module-model">
+<span id="model-class"></span><h1>Model class<a class="headerlink" href="#module-model" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="model.Model">
+<em class="property">class </em><code class="descclassname">model.</code><code class="descname">Model</code><span class="sig-paren">(</span><em>name</em>, <em>params</em>, <em>compartments=0</em>, <em>protocol='ivb'</em><span class="sig-paren">)</span><a class="headerlink" href="#model.Model" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="model.Model.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em>, <em>params</em>, <em>compartments=0</em>, <em>protocol='ivb'</em><span class="sig-paren">)</span><a class="headerlink" href="#model.Model.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model class object containing the model name and various parameters.
+Takes mandatory arguments name and params and optional arguments
+compartments and protocol.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>string</em>) – name of model</li>
+<li><strong>compartments</strong> (<em>integer</em>) – number of compartments</li>
+<li><strong>protocol</strong> (<em>integer</em>) – enter ‘ivb’ for IVB or ‘sc’ for subcutaneous</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-solve_model">
+<span id="solve-model"></span><h1>Solve model<a class="headerlink" href="#module-solve_model" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="solve_model.dose">
+<code class="descclassname">solve_model.</code><code class="descname">dose</code><span class="sig-paren">(</span><em>t</em>, <em>dose_rate</em>, <em>t_dose</em><span class="sig-paren">)</span><a class="headerlink" href="#solve_model.dose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a stepwise dose function.</p>
+<p>For t&lt;t_dose returns the constant value dose_rate.
+For t&gt;t_dose returns 0.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>t</strong> – current time</li>
+<li><strong>t_dose</strong> – time to dose at a constant rate until</li>
+<li><strong>dose_rate</strong> – constant value of dose_rate when t&lt;t_dose</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">function of time to be used as forcing in rhs function.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="solve_model.initial_conditions">
+<code class="descclassname">solve_model.</code><code class="descname">initial_conditions</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#solve_model.initial_conditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates initial conditions for ode solver of correct length
+depending on the model.protocol being ‘ivb’ or ‘sc’.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model</strong> – Model class object which specifies the protocol.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="solve_model.rhs">
+<code class="descclassname">solve_model.</code><code class="descname">rhs</code><span class="sig-paren">(</span><em>t</em>, <em>y</em>, <em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#solve_model.rhs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines right hand side (rhs) of the ode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>t</strong> – Time variable.</li>
+<li><strong>y</strong> – <p>List containing concentration variables.</p>
+<p>The length is dependent on the protocol being used.</p>
+<p>For ‘ivb’: y[0] is the central compartment q_c and y[1] is the peripheral q_p1.</p>
+<p>For ‘sc’: y[0] is q_0 and y[1] and y[2] contains q_c and q_p1 respectively.</p>
+<p>If a peripheral compartment is not being used it will 
+still exist but will remain identically zero for all time.</p>
+</li>
+<li><strong>Q_p1</strong> – Transition rate between the central and 
+peripheral compartment.</li>
+<li><strong>V_c</strong> – Volume of the central compartment.</li>
+<li><strong>V_p1</strong> – Volume of the peripheral compartment.</li>
+<li><strong>CL</strong> – Clearance rate from the main compartment.</li>
+<li><strong>k_a</strong> – Absorption rate for ‘sc’ dosing.</li>
+<li><strong>model</strong> – Takes the model class object to retrieve input 
+parameters from it.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">List of derivatives of q_c, q_p1 and optionally q_0 
+depending on protocol, corresponds to the length of y.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="solve_model.solve">
+<code class="descclassname">solve_model.</code><code class="descname">solve</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#solve_model.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses scipy routine solve_ivp to integrate the appropriate
+coupled first order ode’s for a given model from t=0 to t=t_end.
+rhs provides the forcing for the ode’s and initial_conditions is
+used to specify the intial concentrations which will usually all
+be zero.</p>
+<p>By default solve_ivp uses the RK45 method, the relative and absolute
+error tolerances (rtol and atol) have been increased to 1e-6 and 1e-8.
+numpy arrays containing the timesteps and solution components of y at
+each timestep are accessed by sol.t and sol.y respectively. For example
+if a 2 compartment ‘ivb’ model is solved sol.y[0,:] contains the value
+of q_c at each of the timesteps specified by sol.t[:].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model</strong> – Model class object to be solved.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return sol:</th><td class="field-body">Solution object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-plotting">
+<span id="plotting"></span><h1>Plotting<a class="headerlink" href="#module-plotting" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotting.figure_creator">
+<code class="descclassname">plotting.</code><code class="descname">figure_creator</code><span class="sig-paren">(</span><em>model_list</em>, <em>sol_list</em><span class="sig-paren">)</span><a class="headerlink" href="#plotting.figure_creator" title="Permalink to this definition">¶</a></dt>
+<dd><p>figure_creator takes an input of a list of Model class objects
+and a list of solution objects and outputs a plot of drug
+quantities in each compartment versus time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_list</strong> (<em>list</em>) – A list of model class instances</li>
+<li><strong>sol</strong> (<em>list</em>) – an list of objects (sol) containing:
+sol.t, an array of timesteps;
+and sol.y, an array of the ODE solutions</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return fig:</th><td class="field-body"><p class="first">visualisation of solutions to model(s)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">matplotlib figure</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-validate">
+<span id="validate"></span><h1>Validate<a class="headerlink" href="#module-validate" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="validate.validate">
+<code class="descclassname">validate.</code><code class="descname">validate</code><span class="sig-paren">(</span><em>name</em>, <em>params</em>, <em>compartments</em>, <em>protocol</em><span class="sig-paren">)</span><a class="headerlink" href="#validate.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes in model name, parameters, compartments and protocol
+and validates each argument using the appropriate function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="validate.validate_compartments">
+<code class="descclassname">validate.</code><code class="descname">validate_compartments</code><span class="sig-paren">(</span><em>compartments</em><span class="sig-paren">)</span><a class="headerlink" href="#validate.validate_compartments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes in number of model compartments as input and
+checks if it is an integer or is negative. If not the function
+raises errors.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="validate.validate_name">
+<code class="descclassname">validate.</code><code class="descname">validate_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#validate.validate_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes in name of model as input and checks if it is a string.
+If not, raises TypeError.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="validate.validate_params">
+<code class="descclassname">validate.</code><code class="descname">validate_params</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#validate.validate_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each model parameter, checks if they are all floating point numbers and if not, raises an error.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> – Set of Model class object parameters</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="validate.validate_protocol">
+<code class="descclassname">validate.</code><code class="descname">validate_protocol</code><span class="sig-paren">(</span><em>protocol</em><span class="sig-paren">)</span><a class="headerlink" href="#validate.validate_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes in protocol input and checks if it corresponds
+to the ‘ivb’ (intravenous bolus) or ‘sc’ (subcutaneous)
+model options. If not, returns an error.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="indices">
+<h1>Indices<a class="headerlink" href="#indices" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>Welcome to PK-Toolbox’s documentation!</strong></a></li>
+<li><a class="reference internal" href="#module-model">Model class</a></li>
+<li><a class="reference internal" href="#module-solve_model">Solve model</a></li>
+<li><a class="reference internal" href="#module-plotting">Plotting</a></li>
+<li><a class="reference internal" href="#module-validate">Validate</a></li>
+<li><a class="reference internal" href="#indices">Indices</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Room8.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
