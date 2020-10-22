@@ -115,4 +115,3 @@ def test_validate_params(test, raises):
     if raises:
         with pytest.raises(raises):
             validate_params(test)
-            
