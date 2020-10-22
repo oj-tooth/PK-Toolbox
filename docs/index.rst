@@ -18,3 +18,16 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+Model class
+=====================
+.. automodule:: model
+.. autoclass:: Model
+   :members:
+   :private-members:
+   :special-members:
+
+Solve model
+=====================
+.. automodule:: solve_model
+   :members:
