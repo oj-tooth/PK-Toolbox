@@ -17,21 +17,26 @@ def rhs(t, y, model):
     :return: List of derivatives of q_c, q_p1 and optionally q_0 depending on protocol.
     """
     #get params out of the model class
-    Q_p1 = model.params['Q_p1']
+    
     V_c = model.params['V_c']
-    V_p1 = model.params['V_p1']
     CL = model.params['CL']
     k_a = model.params['k_a']
     dose = model.params['dose']
-
-    if model.protocol == 1:
+    if model.compartments == 1:
+        Q_p1 = 0
+        V_p1 = 1
+    else:
+        Q_p1 = model.params['Q_p1']
+        V_p1 = model.params['V_p1']
+    
+    if model.protocol == 'sc':
         q_0, q_c, q_p1 = y
         transition = Q_p1 * (q_c/V_c - q_p1/V_p1)
         dq0_dt =  dose - k_a * q_0
         dqc_dt = k_a * q_0 - CL * q_c/V_c -transition
         dqp1_dt = transition
         return [dq0_dt, dqc_dt, dqp1_dt]
-    elif model.protocol == 0:
+    elif model.protocol == 'ivb':
         q_c, q_p1 = y
         transition = Q_p1 * (q_c/V_c - q_p1/V_p1)
         dqc_dt = dose - CL * q_c/V_c -transition
@@ -42,9 +47,9 @@ def initial_conditions(model):
     """Initialises initial conditions for ode solver of correct length 
     using model.protocol attribute.
     """
-    if model.protocol == 1:
+    if model.protocol == 'sc':
         return np.array([0.0, 0.0, 0.0])
-    elif model.protocol == 0:
+    elif model.protocol == 'ivb':
         return np.array([0.0, 0.0])
 
 #Using a function for this may be slightly redundant
