@@ -44,7 +44,7 @@ def test_validate_name(test, raises):
         ),
         (
             3,
-            TypeError,
+            ValueError,
         ),
         (
             'hello',
