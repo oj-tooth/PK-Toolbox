@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 
 def figure_creator(model_list, sol_list):
     '''
+    figure_creator takes an input of a list of Model class objects
+    and a list of solution objects and outputs a plot of drug
+    quantities in each compartment versus time.
 
     :param model_list: A list of model class instances
     :type model_list: list
