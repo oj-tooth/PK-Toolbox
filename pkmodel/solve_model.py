@@ -2,6 +2,9 @@ import numpy as np
 import scipy.integrate
 from model import Model
 
+def dose(t,dose_rate,t_dose):
+    return dose_rate * np.heaviside(t_dose - t,1)
+
 def rhs(t, y, model):
     """Defines right hand side (rhs) of the ode.
 
@@ -21,7 +24,8 @@ def rhs(t, y, model):
     V_c = model.params['V_c']
     CL = model.params['CL']
     k_a = model.params['k_a']
-    dose = model.params['dose']
+    t_dose=model.params['t_dose']
+    dose_rate=model.params['dose_rate']
     if model.compartments == 1:
         Q_p1 = 0
         V_p1 = 1
@@ -32,14 +36,14 @@ def rhs(t, y, model):
     if model.protocol == 'sc':
         q_0, q_c, q_p1 = y
         transition = Q_p1 * (q_c/V_c - q_p1/V_p1)
-        dq0_dt =  dose - k_a * q_0
+        dq0_dt =  dose(t, dose_rate, t_dose) - k_a * q_0
         dqc_dt = k_a * q_0 - CL * q_c/V_c -transition
         dqp1_dt = transition
         return [dq0_dt, dqc_dt, dqp1_dt]
     elif model.protocol == 'ivb':
         q_c, q_p1 = y
         transition = Q_p1 * (q_c/V_c - q_p1/V_p1)
-        dqc_dt = dose - CL * q_c/V_c -transition
+        dqc_dt = dose(t, dose_rate, t_dose) - CL * q_c/V_c -transition
         dqp1_dt = transition
     return [dqc_dt, dqp1_dt]
 
