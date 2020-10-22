@@ -3,6 +3,7 @@
 #
 import validate
 
+
 class Model:
 
     def __init__(self, name, params, compartments=0, protocol='ivb'):
@@ -21,12 +22,3 @@ class Model:
         self.compartments = compartments
         self.protocol = protocol
         self.params = params
-
-        
-
-
-
-
-    
-
-
