@@ -7,7 +7,6 @@ Created on Wed Oct 21 14:08:39 2020
 """
 
 import plotting
-import user_inputs
 from model import Model
 import solve_model
 
