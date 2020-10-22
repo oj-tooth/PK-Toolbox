@@ -3,21 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to PK-Toolbox's documentation!
-======================================
+**Welcome to PK-Toolbox's documentation!**
+==========================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-Test Statement
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+The PK Toolbox is a Python library dedicated to the simulation and visualisation of Pharmokinetic (PK) models.
 
 Model class
 =====================
@@ -31,3 +24,19 @@ Solve model
 =====================
 .. automodule:: solve_model
    :members:
+
+Plotting
+=====================
+.. automodule:: plotting
+   :members:
+
+Validate
+=====================
+.. automodule:: validate
+   :members:
+
+Indices
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
