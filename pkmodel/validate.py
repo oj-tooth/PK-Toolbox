@@ -18,7 +18,7 @@ def validate_protocol(protocol):
     """Takes in protocol input and checks if it corresponds
     to the 'ivb' (intravenous bolus) or 'sc' (subcutaneous)
     model options. If not, returns an error.
-
+    
     """
     if protocol not in ['ivb', 'sc']:
         raise ValueError("Protocol must be 'ivb' or 'sc'")
