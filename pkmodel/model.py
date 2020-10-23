@@ -1,7 +1,7 @@
 #
 # Model class
 #
-import validate
+from . import validate
 
 
 class Model:
