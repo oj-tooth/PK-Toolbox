@@ -8,7 +8,7 @@ def validate_params(params):
         if (type(params[key]) is not float):
             if (type(params[key]) is not int):
                 if params[key] is not None:
-                    raise TypeError('All parameters should be floating point numbers (e.g. 1.0). Parameter ' + key + ' is not.')
+                    raise TypeError('All parameters should be floating point numbers (e.g. 1.0). Parameter ' + key + ' is not')
         if params[key] is not None:
             if params[key] <= 0.:
                 raise ValueError('Values must all be greater than 0')
