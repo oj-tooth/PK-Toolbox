@@ -1,4 +1,4 @@
-from pkmodel/model import Model
+from pkmodel.model import Model
 import pytest
 import numpy
 
