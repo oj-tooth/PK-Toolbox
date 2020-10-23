@@ -49,7 +49,7 @@ setup(
 
     # author_email='',
 
-    maintainer='Ollie Tooth',
+    maintainer='Room8',
 
     maintainer_email='oliver.tooth@env-res.ox.ac.uk',
 
