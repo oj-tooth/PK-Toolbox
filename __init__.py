@@ -2,12 +2,14 @@
 PK Toolbox is Pharmokinetic Model and Visualisation Toolbox!
 """
 
+# Import pkmodel.
+import pkmodel
 
-# Import version info
+# Import version info.
 from pkmodel.version_info import VERSION_INT, VERSION # noqa
 
 
-# Import main classes
+# Import main modules.
 from pkmodel.model import *  # noqa
 from pkmodel.solve_model import * # noqa
 import pkmodel.plotting  # noqa
