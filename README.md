@@ -52,8 +52,8 @@ PK models are used to describe how a specific chemical (drug) is absorbed, distr
 Multi-compartmental PK models, in which the body is divided into one or more interacting compartments, are the most commonly used. Below we present the structure of the two PK models available in the PK Toolbox: 
 
 <p align="center">
-    <img src="images/IVB.png" alt="Logo" width="350" height="350"> 
-    <img src="images/SC.png" alt="Logo" width="350" height="350"> 
+    <img src="images/IVB.png" alt="Logo" width="350" height="300"> 
+    <img src="images/SC.png" alt="Logo" width="350" height="300"> 
  </a>
 <p
 
