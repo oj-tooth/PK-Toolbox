@@ -8,7 +8,7 @@ from .version_info import VERSION_INT, VERSION  # noqa
 
 
 # Import main classes
-import model    # noqa
+from model import Model   # noqa
 import solve_model  # noqa
 import plotting  # noqa
 import validate  # noqa
