@@ -1,7 +1,7 @@
 def validate_params(params):
     """For each model parameter, checks if they are all floating point numbers and if not, raises an error.
 
-       :param params: Set of Model class object parameters
+   :param params: Set of Model class object parameters
 
     """
     for key in params:
@@ -19,7 +19,7 @@ def validate_protocol(protocol):
     to the 'ivb' (intravenous bolus) or 'sc' (subcutaneous)
     model options. If not, returns an error.
 
-       :param protocol: Model class variable for protocol being used
+    :param protocol: Model class variable for protocol being used
     """
     if protocol not in ['ivb', 'sc']:
         raise ValueError("Protocol must be 'ivb' or 'sc'")
@@ -30,7 +30,7 @@ def validate_compartments(compartments):
     checks if it is an integer or is negative. If not the function
     raises errors.
 
-       :param compartments: Model class variable for number of compartments
+    :param compartments: Model class variable for number of compartments
     """
     if (type(compartments) is not float):
         if (type(compartments) is not int):
@@ -43,7 +43,7 @@ def validate_name(name):
     """Takes in name of model as input and checks if it is a string.
     If not, raises TypeError.
 
-       :param name: Model class variable for model name
+    :param name: Model class variable for model name
     """
     if type(name) is not str:
         raise TypeError('Name must be a string')
@@ -53,10 +53,10 @@ def validate(name, params, compartments, protocol):
     """Takes in model name, parameters, compartments and protocol
     and validates each argument using the appropriate function.
 
-       :param name: Model class variable for model name
-       :param params: Set of Model class object parameters
-       :param compartments: Model class variable for number of compartments
-       :param protocol: Model class variable for protocol being used
+    :param name: Model class variable for model name
+    :param params: Set of Model class object parameters
+    :param compartments: Model class variable for number of compartments
+    :param protocol: Model class variable for protocol being used
 
     """
     validate_params(params)
