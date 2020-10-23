@@ -1,13 +1,14 @@
-
 def validate_params(params):
     """For each model parameter, checks if they are all floating point numbers and if not, raises an error.
+
        :param params: Set of Model class object parameters
+
     """
     for key in params:
         if (type(params[key]) is not float):
             if (type(params[key]) is not int):
                 if params[key] is not None:
-                    raise TypeError('All parameters should be floating point numbers (e.g. 1.0). Parameter ' + key + ' is not.')
+                    raise TypeError('All parameters should be floating point numbers (e.g. 1.0). Parameter ' + key + ' is not')
         if params[key] is not None:
             if params[key] <= 0.:
                 raise ValueError('Values must all be greater than 0')
@@ -17,6 +18,7 @@ def validate_protocol(protocol):
     """Takes in protocol input and checks if it corresponds
     to the 'ivb' (intravenous bolus) or 'sc' (subcutaneous)
     model options. If not, returns an error.
+    
     """
     if protocol not in ['ivb', 'sc']:
         raise ValueError("Protocol must be 'ivb' or 'sc'")
