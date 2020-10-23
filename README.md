@@ -102,7 +102,7 @@ installation code
 The PK Toolbox is structured as follows:
 
 <p align="center">
-    <img src="images/PK_Toolbox_Scheme.png" width="350" height="200"> 
+    <img src="images/PK_Toolbox_Scheme.png" width="400" height="200"> 
  </a>
 <p
 
