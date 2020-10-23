@@ -32,18 +32,28 @@ def config_model():
 
     protocol = str(protocol_entry.get())
     
-    params = {
-            'V_c': float(Vc_entry.get()),
-            'CL': float(CL_entry.get()),
-            'k_a': float(ka_entry.get()),
-            'dose_rate': float(Dose_entry.get()),
-            't_dose': float(tdose_entry.get()),
-            't_end': float(tend_entry.get()),
-            'Q_p1': float(Qp1_entry.get()),
-            'V_p1': float(Vp1_entry.get())
-        }
+    try:
+        if compartments = 1:
+            Q_p1 = None
+            V_p1 = None
+        else:
+            Q_p1 = float(Qp1_entry.get())
+            V_p1 = float(Vp1_entry.get())
 
-    model_list.append(Model(name, params, compartments, protocol))
+        params = {
+                'V_c': float(Vc_entry.get()),
+                'CL': float(CL_entry.get()),
+                'k_a': float(ka_entry.get()),
+                'dose_rate': float(Dose_entry.get()),
+                't_dose': float(tdose_entry.get()),
+                't_end': float(tend_entry.get()),
+                'Q_p1': Q_p1,
+                'V_p1': V_p1
+            }
+    except TypeError: 
+        print("TypeError: All parameters should be floating point numbers (e.g. 1.0).")
+
+    model_list.append(Model(name, params, compartments, protocol.lower()))
 
     summary_label = Label(my_window, text = "Configured: " + name)
     summary_label.grid(row = 4, column = 5)
@@ -57,9 +67,9 @@ my_window.title("PK Toolbox Models")
 Title_label = Label(my_window, text = "PK Toolbox Console", bg = "white smoke", font=("Verdana 22 bold"))
 Title_label.grid(row = 0, column = 0)
 # Add PK Toolbox logo.
-# logo = tk.PhotoImage(file= "images/Logo_Image.png")
-# Logo_label = Label(my_window, image = logo)
-# Logo_label.grid(row = 0, column = 2)
+logo = PhotoImage("images/Logo_Image.png")
+Logo_label = Label(my_window, image = logo)
+Logo_label.grid(row = 0, column = 2)
 
 # User input for model name.
 name_label = Label(my_window, text = "Model Name:", font=("Verdana 15 bold"))
@@ -128,7 +138,7 @@ tend_entry.grid(row = 6,column = 4)
 button = Button(my_window, text = "Add PK Model", font=("Verdana 14"), command = config_model)
 button.grid(row = 5,column = 5)
 # Add button to end configuration - This could trigger running the simulations.
-button = Button(my_window, text = "End Configuration", font=("Verdana 14"), command = my_window.quit)
+button = Button(my_window, text = "Run Models", font=("Verdana 14"), command = my_window.quit)
 button.grid(row = 6,column = 5)
 
 # End window loop.
