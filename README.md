@@ -9,7 +9,7 @@
   <p align="center">
     A Pharmokinetic Model and Visualisation Toolbox!
     <br />
-    <a href="https://github.com/oj-tooth/PK-Toolbox"><strong>Explore the docs »</strong></a>
+    <a href="https://pk-toolbox.readthedocs.io"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/oj-tooth/PK-Toolbox">View Demo</a>
