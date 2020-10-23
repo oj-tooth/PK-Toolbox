@@ -38,9 +38,9 @@
 
 **T**he PK Toolbox is a Python library dedicated to the simulation and visualisation of Pharmokinetic (PK) models. 
 
-Users are able to:
+Users are able to utilise the PK Toolbox user interface to:
 
-* model the body as one or more compartments
+* model the body with peripheral compartments
 * utilise either *intravenous bolus* or *subcutaneous* dosing protocols
 * specify the dose and duration of dosing
 * compare multiple PK model ouputs
@@ -63,15 +63,13 @@ For *intravenous bolus* dosing protocol:
 * Dose(t) - Dose function (ng hr<sup>-1</sup>) 
 * V<sub>c</sub> - Volume of central compartment (mL)
 * q<sub>c</sub> - Concentration of drug in central compartment (ng)
-* V<sub>pn</sub> - Volume of peripheral compartment n (mL)
-* q<sub>n</sub> - Concentration of drug in peripheral compartment n (ng)
-* Q<sub>pn</sub> - Transition between central compartment and peripheral compartment n (mL hr<sup>-1</sup>)
+* V<sub>pn</sub> - Volume of peripheral compartment 1 (mL)
+* q<sub>n</sub> - Concentration of drug in peripheral compartment 1 (ng)
+* Q<sub>pn</sub> - Transition between central compartment and peripheral compartment 1 (mL hr<sup>-1</sup>)
 * CL - Clearance rate from the central compartment (mL hr<sup>-1</sup>) 
 
 Additional paramers for *subcutaneous* dosing protocol:
-* V<sub>q0</sub> - Volume of dosage compartment (mL)
 * q<sub>0</sub> - Concentration of drug in dosage compartment (ng)
-* Q<sub>p0</sub> - Transition between dosage compartment and central compartment (mL hr<sup>-1</sup>)
 * k<sub>a</sub> - Absorption rate to central compartment (hr<sup>-1</sup>)
 
 <!-- Getting Started -->
@@ -101,7 +99,13 @@ installation code
 <!-- Usage -->
 ## Usage
 
-Introduce the user workflow and main files in this section. Include graphics.
+The PK Toolbox is structured as follows:
+
+* Users run the run_PK.py file.
+    * A PK Toolbox Console window is opened, allowing users to specify one or more PK models for configuration.
+
+The run_PK.py
+2. 
 
 ## Example
 
