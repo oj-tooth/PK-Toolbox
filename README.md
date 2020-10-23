@@ -132,24 +132,23 @@ Below we provide a simple example of how to use the PK Toolbox Console to config
 2. Example_SC is a single peripheral compartment (2 total compartments) PK model with a *subcutaneous* dosing protocol and default parameters.
 
 * **Step 1:** 
-    * Run the run_PK.py file to open the PK Toolbox console window.
+  * Run the run_PK.py file to open the PK Toolbox console window.
 
 * **Step 2:** 
-    * Configuire Example_IVB with dosing protocol IVB and the default parameters specified in [boxes]. 
-    * Press Add Model and a confirmation statement: "Configuired Model: Example_IVB" will print above.
+  * Configuire Example_IVB with dosing protocol IVB and the default parameters specified in [boxes]. 
+  * Press Add Model and a confirmation statement: "Configuired Model: Example_IVB" will print above.
     
 <p align="center">
-    <img src="images/Example_IVB.png" width="600" height="100"> 
+    <img src="images/Example_IVB.png" width="500" height="100"> 
  </a>
 <p
     
 * **Step 3:** 
-    * Configuire Example_SC with dosing protocol SC and the default parameters specified in [boxes]. 
-    * Press Add Model and a confirmation statement: "Configuired Model: Example_SC" will print above.
+   * Configuire Example_SC with dosing protocol SC and the default parameters specified in [boxes]. 
+   * Press Add Model and a confirmation statement: "Configuired Model: Example_SC" will print above.
     
 <p align="center">
-    <img src="images/Example_SC.png" width="600" height="100"> 
- </a>
+    <img src="images/Example_SC.png" width="500" height="100"> 
 <p
 
 * **Step 4:** 
@@ -157,8 +156,7 @@ Below we provide a simple example of how to use the PK Toolbox Console to config
     * A line plot containing the drug concentrations output from both of our models will appear in a new figure window.
     
 <p align="center">
-    <img src="images/Example_Graph.png" width="300" height="300"> 
- </a>
+    <img src="images/Example_Graph.png" width="200" height="200"> 
 <p
 
 Congratulations, you have ran your first PK models with the PK Toolbox!
