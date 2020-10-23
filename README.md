@@ -45,7 +45,7 @@
 <!-- About the PK Toolbox -->
 ## About The PK Toolbox
 
-**T**he PK Toolbox is a Python library dedicated to the simulation and visualisation of Pharmokinetic (PK) models. 
+The PK Toolbox is a Python library dedicated to the simulation and visualisation of Pharmokinetic (PK) models. 
 
 Users are able to utilise the PK Toolbox user interface to:
 
@@ -90,14 +90,14 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 List prerequiste software.
-* software name
-```sh
-installation code
-```
+* 
 
 ### Installation
 
-1. Instruction
+1. The package is installable using pip.
+```sh 
+pip install -i https://test.pypi.org/simple/ pk-toolbox-room8
+```
 2. Instruction with code snippet
 ```sh
 installation code
