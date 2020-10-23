@@ -8,7 +8,7 @@ from .version_info import VERSION_INT, VERSION # noqa
 
 
 # Import main modules.
-from . import start_GUI # noqa
+# from . import start_GUI # noqa
 from .model import *  # noqa
 from .solve_model import * # noqa
 from . import plotting  # noqa
