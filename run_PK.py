@@ -3,11 +3,11 @@
 ################
 
 # Import visualisation module.
-from pkmodel import plotting
+from pk_toolbox_room8.pkmodel import plotting
 # Import Model class module.
-from pkmodel.model import Model
+from pk_toolbox_room8.pkmodel.model import Model
 # Import ODE solver module.
-from pkmodel import solve_model
+from pk_toolbox_room8.pkmodel import solve_model
 # Import tkinter package.
 from tkinter import Label, Entry, Button, PhotoImage, Tk
 
