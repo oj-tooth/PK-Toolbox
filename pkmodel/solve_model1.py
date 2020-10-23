@@ -4,10 +4,7 @@ import scipy.integrate
 
 def dose(t, dose_rate, t_dose):
     """Creates a stepwise dose function.
-
-    For t<t_dose returns the constant value dose_rate.
-    For t>t_dose returns 0.
-
+    
     :param t: current time
     :param t_dose: time to dose at a constant rate until
     :param dose_rate: constant value of dose_rate when t<t_dose
@@ -21,16 +18,13 @@ def rhs(t, y, model):
 
     :param t: Time variable.
     :param y: List containing concentration variables.
-    :param Q_p1: Transition rate between the central and
-        peripheral compartment.
+    :param Q_p1: Transition rate between the central and peripheral compartment.
     :param V_c: Volume of the central compartment.
     :param V_p1: Volume of the peripheral compartment.
     :param CL: Clearance rate from the main compartment.
     :param k_a: Absorption rate for 'sc' dosing.
-    :param model: Takes the model class object to retrieve input
-        parameters from it.
-    :return: List of derivatives of q_c, q_p1 and optionally q_0
-        depending on protocol, corresponds to the length of y.
+    :param model: Takes the model class object to retrieve input parameters from it.
+    :return: List of derivatives of q_c, q_p1 and optionally q_0 depending on protocol, corresponds to the length of y.
     """
     #get params out of the model class
     V_c = model.params['V_c']
@@ -63,8 +57,7 @@ def rhs(t, y, model):
 
 
 def initial_conditions(model):
-    """Creates initial conditions for ode solver of correct length
-    depending on the model.protocol being 'ivb' or 'sc'.
+    """Creates initial conditions for ode solver of correct length depending on the model.protocol being 'ivb' or 'sc'.
 
     :param model: Model class object which specifies the protocol.
     """
