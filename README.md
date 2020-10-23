@@ -104,8 +104,12 @@ The PK Toolbox is structured as follows:
 * Users run the run_PK.py file.
     * A PK Toolbox Console window is opened, allowing users to specify one or more PK models for configuration.
 
-The run_PK.py
-2. 
+* The run_PK.py file calls modules:
+    1. model.py : Creates model class objects for each of the user defined PK models.
+    2. solve_model.py : Solves models defined by model.py using scipy.integrate.solv_imp.
+    3. plotting.py : Creates plot comparing model solutions from solve_model.py. 
+    
+For further details on each of the modules included in the PK Toolbox view our [docs](https://pk-toolbox.readthedocs.io).
 
 ## Example
 
