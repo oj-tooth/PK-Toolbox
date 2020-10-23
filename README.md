@@ -141,7 +141,7 @@ Below we provide a simple example of how to use the PK Toolbox Console to config
 <p align="center">
     <img src="images/Example_IVB.png" width="500" height="100"> 
  </a>
-<p
+<p>
     
 * **Step 3:** 
    * Configuire Example_SC with dosing protocol SC and the default parameters specified in [boxes]. 
@@ -149,7 +149,7 @@ Below we provide a simple example of how to use the PK Toolbox Console to config
     
 <p align="center">
     <img src="images/Example_SC.png" width="500" height="100"> 
-<p
+<p>
 
 * **Step 4:** 
     * Now we have finished adding our PK models lets press Run Models to run our simulations. 
