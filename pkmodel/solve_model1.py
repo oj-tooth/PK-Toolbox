@@ -3,29 +3,12 @@ import scipy.integrate
 
 
 def dose(t, dose_rate, t_dose):
-    """Creates a stepwise dose function.
-    
-    :param t: current time
-    :param t_dose: time to dose at a constant rate until
-    :param dose_rate: constant value of dose_rate when t<t_dose
-    :return: function of time to be used as forcing in rhs function.
-    """
+    '''                                                                                                                     Model class object containing the model name and various parameters.                                                    Takes mandatory arguments name and params and optional arguments                                                        compartments and protocol.                                                                                                                                                                                                                      :param name: name of model                                                                                              :type name: string                                                                                                      :param compartments: number of compartments                                                                             :type compartments: integer                                                                                             :param protocol: enter 'ivb' for IVB or 'sc' for subcutaneous                                                           :type protocol: integer                                                                                                                                                                                                                         '''
     return dose_rate * np.heaviside(t_dose - t, 1)
 
 
 def rhs(t, y, model):
-    """Defines right hand side (rhs) of the ode.
-
-    :param t: Time variable.
-    :param y: List containing concentration variables.
-    :param Q_p1: Transition rate between the central and peripheral compartment.
-    :param V_c: Volume of the central compartment.
-    :param V_p1: Volume of the peripheral compartment.
-    :param CL: Clearance rate from the main compartment.
-    :param k_a: Absorption rate for 'sc' dosing.
-    :param model: Takes the model class object to retrieve input parameters from it.
-    :return: List of derivatives of q_c, q_p1 and optionally q_0 depending on protocol, corresponds to the length of y.
-    """
+    '''                                                                                                                     Model class object containing the model name and various parameters.                                                    Takes mandatory arguments name and params and optional arguments                                                        compartments and protocol.                                                                                                                                                                                                                      :param name: name of model                                                                                              :type name: string                                                                                                      :param compartments: number of compartments                                                                             :type compartments: integer                                                                                             :param protocol: enter 'ivb' for IVB or 'sc' for subcutaneous                                                           :type protocol: integer                                                                                                                                                                                                                         '''
     #get params out of the model class
     V_c = model.params['V_c']
     CL = model.params['CL']
@@ -57,10 +40,7 @@ def rhs(t, y, model):
 
 
 def initial_conditions(model):
-    """Creates initial conditions for ode solver of correct length depending on the model.protocol being 'ivb' or 'sc'.
-
-    :param model: Model class object which specifies the protocol.
-    """
+    '''                                                                                                                     Model class object containing the model name and various parameters.                                                    Takes mandatory arguments name and params and optional arguments                                                        compartments and protocol.                                                                                                                                                                                                                      :param name: name of model                                                                                              :type name: string                                                                                                      :param compartments: number of compartments                                                                             :type compartments: integer                                                                                             :param protocol: enter 'ivb' for IVB or 'sc' for subcutaneous                                                           :type protocol: integer                                                                                                                                                                                                                         '''
     if model.protocol == 'sc':
         return np.array([0.0, 0.0, 0.0])
     elif model.protocol == 'ivb':
@@ -68,22 +48,7 @@ def initial_conditions(model):
 
 
 def solve(model):
-    """Uses scipy routine solve_ivp to integrate the appropriate
-    coupled first order ode's for a given model from t=0 to t=t_end.
-    rhs provides the forcing for the ode's and initial_conditions is
-    used to specify the intial concentrations which will usually all
-    be zero.
-
-    By default solve_ivp uses the RK45 method, the relative and absolute
-    error tolerances (rtol and atol) have been increased to 1e-6 and 1e-8.
-    numpy arrays containing the timesteps and solution components of y at
-    each timestep are accessed by sol.t and sol.y respectively. For example
-    if a 2 compartment 'ivb' model is solved sol.y[0,:] contains the value
-    of q_c at each of the timesteps specified by sol.t[:].
-
-    :param model: Model class object to be solved.
-    :return sol: Solution object
-    """
+    '''                                                                                                                     Model class object containing the model name and various parameters.                                                    Takes mandatory arguments name and params and optional arguments                                                        compartments and protocol.                                                                                                                                                                                                                      :param name: name of model                                                                                              :type name: string                                                                                                      :param compartments: number of compartments                                                                             :type compartments: integer                                                                                             :param protocol: enter 'ivb' for IVB or 'sc' for subcutaneous                                                           :type protocol: integer                                                                                                                                                                                                                         '''
     sol = scipy.integrate.solve_ivp(
         fun=lambda t, y: rhs(t, y, model),
         t_span=[0.0, model.params['t_end']],
