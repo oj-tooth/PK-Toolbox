@@ -9,7 +9,8 @@ from .model import Model
 # Import ODE solver module.
 from . import solve_model
 # Import tkinter package.
-# from tkinter import Label, Entry, Button, PhotoImage, Tk
+if __name__ == '__main__':
+    from tkinter import Label, Entry, Button, PhotoImage, Tk
 
 # USER INPUT
 
