@@ -20,11 +20,6 @@ Model class
    :private-members:
    :special-members:
 
-Solve model1
-=====================
-.. automodule:: solve_model1
-   :members:
-
 Solve model
 =====================
 .. automodule:: solve_model
