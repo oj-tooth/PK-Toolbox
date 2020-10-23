@@ -21,7 +21,7 @@
     <a href="https://pk-toolbox.readthedocs.io"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/oj-tooth/PK-Toolbox">View Demo</a>
+    <a href="https://github.com/oj-tooth/PK-Toolbox/">View Demo</a>
     ·
     <a href="https://github.com/oj-tooth/PK-Toolbox/issues">Report Issue</a>
     ·
