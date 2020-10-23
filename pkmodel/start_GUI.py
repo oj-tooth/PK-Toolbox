@@ -5,7 +5,7 @@
 # Import visualisation module.
 from . import plotting
 # Import Model class module.
-from . import Model
+from .model import Model
 # Import ODE solver module.
 from . import solve_model
 # Import tkinter package.
