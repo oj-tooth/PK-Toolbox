@@ -24,7 +24,7 @@ import pytest
     ])
 def test_validate_name(test, raises):
     """Test normalisation works for arrays of one and positive integers."""
-    from validate import validate_name
+    from ..validate import validate_name
     if raises:
         with pytest.raises(raises):
             validate_name(test)
@@ -53,7 +53,7 @@ def test_validate_name(test, raises):
     ])
 def test_validate_protocol(test, raises):
     """Test normalisation works for arrays of one and positive integers."""
-    from validate import validate_protocol
+    from ..validate import validate_protocol
     if raises:
         with pytest.raises(raises):
             validate_protocol(test)
@@ -82,7 +82,7 @@ def test_validate_protocol(test, raises):
     ])
 def test_validate_compartments(test, raises):
     """Test normalisation works for arrays of one and positive integers."""
-    from validate import validate_compartments
+    from ..validate import validate_compartments
     if raises:
         with pytest.raises(raises):
             validate_compartments(test)
@@ -111,7 +111,7 @@ def test_validate_compartments(test, raises):
     ])
 def test_validate_params(test, raises):
     """Test normalisation works for arrays of one and positive integers."""
-    from validate import validate_params
+    from ..validate import validate_params
     if raises:
         with pytest.raises(raises):
             validate_params(test)

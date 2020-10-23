@@ -1,4 +1,4 @@
-from model import Model
+from ..model import Model
 import pytest
 import numpy
 
@@ -50,7 +50,7 @@ def test_dose(test, expected, raises):
     """Tests dose function from solve_model returns correct
     heaviside step function values.
     """
-    import solve_model
+    from .. import solve_model
     assert solve_model.dose(*test) == expected
 
 
@@ -68,7 +68,7 @@ def test_initial_conditions(test, expected, raises):
     """Tests dose function from solve_model returns correct
     heaviside step function values.
     """
-    import solve_model
+    from .. import solve_model
     assert numpy.array_equal(solve_model.initial_conditions(test), expected)
 
 
@@ -89,7 +89,7 @@ def test_solve_type(test, expected, raises):
     :param model_init: pytest fixture function which generates an instance
         of Model class.
     """
-    import solve_model
+    from .. import solve_model
     assert isinstance(solve_model.solve(test).y, numpy.ndarray)
 
 
@@ -109,5 +109,5 @@ def test_solve_shape(test, expected, raises):
     :param model_init: pytest fixture function which generates an instance
         of Model class.
     """
-    import solve_model
+    from .. import solve_model
     assert solve_model.solve(test).y.shape[1] == solve_model.solve(test).t.shape[0]
