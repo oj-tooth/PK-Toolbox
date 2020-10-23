@@ -34,7 +34,7 @@ def get_readme():
 # Go!
 setup(
     # Module name (lowercase)
-    name='pkmodel',
+    name='pk-toolbox-room8',
 
     # Version
     version=get_version(),
