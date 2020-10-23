@@ -101,6 +101,11 @@ installation code
 
 The PK Toolbox is structured as follows:
 
+<p align="center">
+    <img src="images/'PK Toolbox Schema.png'" width="350" height="200"> 
+ </a>
+<p
+
 * Users run the run_PK.py file.
     * A PK Toolbox Console window is opened, allowing users to specify one or more PK models for configuration.
 
@@ -126,7 +131,7 @@ Distributed under the MIT License. Add link to license file when complete.
 
 <!-- Contact -->
 ## Contact
-
+PK_T
 Update collaborators. 
 <!-- Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com -->
 
