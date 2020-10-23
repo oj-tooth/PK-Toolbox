@@ -8,8 +8,8 @@ from .version_info import VERSION_INT, VERSION  # noqa
 
 
 # Import main classes
-from model import Model   # noqa
-import solve_model  # noqa
-import plotting  # noqa
-import validate  # noqa
-import run_PK  # noqa
+import .model   # noqa
+import .solve_model  # noqa
+import .plotting  # noqa
+import .validate  # noqa
+import .run_PK  # noqa
