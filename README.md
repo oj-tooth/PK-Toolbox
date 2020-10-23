@@ -1,4 +1,13 @@
 <!-- Prpject Title and Logo -->
+
+![codecov](https://codecov.io/gh/oj-tooth/PK-Toolbox/branch/master/graph/badge.svg?token=3P8GCHJFCC)
+
+![Unit tests for Python Versions.](https://github.com/oj-tooth/PK-Toolbox/workflows/Unit%20tests%20for%20Python%20Versions./badge.svg)
+![Unit tests for OS Versions.](https://github.com/oj-tooth/PK-Toolbox/workflows/Unit%20tests%20for%20OS%20Versions./badge.svg) 
+
+
+
+
 <br />
 <p align="center">
     <img src="images/Logo_Image.png" alt="Logo" width="100" height="100">
