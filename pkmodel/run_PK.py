@@ -3,11 +3,11 @@
 ################
 
 # Import visualisation module.
-import plotting
+from . import plotting
 # Import Model class module.
-from model import Model
+from .model import Model
 # Import ODE solver module.
-import solve_model
+from . import solve_model
 # Import tkinter package.
 from tkinter import Label, Entry, Button, PhotoImage, Tk
 
