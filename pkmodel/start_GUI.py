@@ -17,7 +17,6 @@ if __name__ == '__main__':
     # Configuire empty list model_list.
     model_list = []
 
-
     def config_model():
         """Configures PK model.
         Extracts variables from GUI to create named Model class member.
@@ -60,7 +59,6 @@ if __name__ == '__main__':
 
         summary_label = Label(my_window, text="Configured: " + name)
         summary_label.grid(row=4, column=5)
-
 
     # Define GUI window, my_window.
     my_window = Tk()
@@ -161,7 +159,6 @@ if __name__ == '__main__':
 
     # End window loop.
     my_window.mainloop()
-
 
     # FIND SOLUTIONS
     sol_list = []
