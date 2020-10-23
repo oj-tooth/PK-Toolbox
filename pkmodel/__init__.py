@@ -12,4 +12,3 @@ from .model import *  # noqa
 from .solve_model import * # noqa
 from . import plotting  # noqa
 from .validate import * # noqa
-from .run_PK import * # noqa
