@@ -171,7 +171,7 @@ Congratulations, you have ran your first PK models with the PK Toolbox!
 <!-- License -->
 ## License
 
-Distributed under the MIT License. See LICENSE file in root directory. 
+Distributed under the MIT License. See LICENSE file for further details. 
 
 <!-- Acknowledgements -->
 ## Acknowledgements
