@@ -47,7 +47,7 @@
 
 The PK Toolbox is a Python library dedicated to the simulation and visualisation of Pharmokinetic (PK) models. 
 
-Users are able to utilise the PK Toolbox user interface to:
+Users are able to write their own scripts or utilise the PK Toolbox user interface to:
 
 * model the body with peripheral compartments
 * utilise either *intravenous bolus* or *subcutaneous* dosing protocols
@@ -84,26 +84,26 @@ Additional paramers for *subcutaneous* dosing protocol:
 <!-- Getting Started -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-List prerequiste software.
-* 
+Below are our simple installation intructions to quickly get started with the PK Toolbox locally.
 
 ### Installation
 
-1. The package is installable using pip.
+1. To benefit from the PK Toolbox's graphical user interface, we recommend cloning this GitHub repo in either a new or existing directory.
+```sh
+git clone https://github.com/oj-tooth/PK-Toolbox.git
+```
+2. Next, lets setup a virtual environment in the cloned PK-Toolbox directory and pip install the PK Toolbox's dependencies (Python packages listed in the requirements.txt file). 
+```sh
+cd PK-Toolbox
+
+python3 -m venv venv
+
+pip install -r requirements.txt
+```
+3. Great, finally we can pip install the PK Toolbox from TestPyPI, where it is called pk-toolbox-room8 (room8 is the name of our collaboration!).
 ```sh 
 pip install -i https://test.pypi.org/simple/ pk-toolbox-room8
 ```
-2. Instruction with code snippet
-```sh
-installation code
-```
-3. Instruction
-
 
 <!-- Usage -->
 ## Usage
@@ -115,10 +115,11 @@ The PK Toolbox is structured as follows:
  </a>
 <p
 
-* Users run the run_PK.py file.
-    * A PK Toolbox Console window is opened, allowing users to specify one or more PK models for configuration.
+* Users run the either the run_PK.py or run_GUI.py file.
+    * When using running the run_GUI.py file, the PK Toolbox Console window is opened, allowing users to specify one or more PK models for configuration.
+    * Alternatively, users can run their own PK models manually using the example run_PK.py file.
 
-* The run_PK.py file calls modules:
+* The run_PK.py and run_GUI.py files call modules:
     1. model.py : Creates model class objects for each of the user defined PK models.
     2. solve_model.py : Solves models defined by model.py using scipy.integrate.solv_imp.
     3. plotting.py : Creates plot comparing model solutions from solve_model.py. 
@@ -132,8 +133,12 @@ Below we provide a simple example of how to use the PK Toolbox Console to config
 2. Example_SC is a single peripheral compartment (2 total compartments) PK model with a *subcutaneous* dosing protocol and default parameters.
 
 * **Step 1:** 
-  * Run the run_PK.py file to open the PK Toolbox console window.
-
+  * Run the run_GUI.py file to open the PK Toolbox console window. Below we show how to do this from the command line.
+  
+```sh 
+python3 run_GUI.py
+```
+  
 * **Step 2:** 
   * Configuire Example_IVB with dosing protocol IVB and the default parameters specified in [boxes]. 
   * Press Add Model and a confirmation statement: "Configuired Model: Example_IVB" will print above.
@@ -142,6 +147,8 @@ Below we provide a simple example of how to use the PK Toolbox Console to config
     <img src="images/Example_IVB.png" width="500" height="100"> 
  </a>
 <p>
+    
+**Note:** Click on images to view in better quality.
     
 * **Step 3:** 
    * Configuire Example_SC with dosing protocol SC and the default parameters specified in [boxes]. 
@@ -164,7 +171,7 @@ Congratulations, you have ran your first PK models with the PK Toolbox!
 <!-- License -->
 ## License
 
-Distributed under the MIT License. Add link to license file when complete. 
+Distributed under the MIT License. See LICENSE file in root directory. 
 
 <!-- Acknowledgements -->
 ## Acknowledgements
