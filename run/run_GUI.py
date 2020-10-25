@@ -3,16 +3,15 @@
 ################
 
 # Import visualisation module.
-from . import plotting
+from pk_toolbox_room8.pkmodel import plotting
 # Import Model class module.
-from .model import Model
+from pk_toolbox_room8.pkmodel.model import Model
 # Import ODE solver module.
-from . import solve_model
+from pk_toolbox_room8.pkmodel import solve_model
 # Import tkinter package.
 from tkinter import Label, Entry, Button, PhotoImage, Tk
 
 # USER INPUT
-
 # Configuire empty list model_list.
 model_list = []
 
