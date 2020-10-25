@@ -15,6 +15,7 @@ from tkinter import Label, Entry, Button, PhotoImage, Tk
 # Configuire empty list model_list.
 model_list = []
 
+
 def config_model():
     """Configures PK model.
     Extracts variables from GUI to create named Model class member.
@@ -57,6 +58,7 @@ def config_model():
 
     summary_label = Label(my_window, text="Configured: " + name)
     summary_label.grid(row=4, column=5)
+
 
 # Define GUI window, my_window.
 my_window = Tk()
